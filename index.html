@@ -66,21 +66,45 @@
             color: #2c3e50;
         }
 
-        /* Main Content */
-        main {
-            padding: 40px 0;
+        /* Page system styles */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 40px;
         }
 
-        .section {
+        .page.active {
+            display: block;
+        }
+
+        .page-header {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .page-content {
             background: #fff;
             margin: 30px 0;
             padding: 40px;
             border: 1px solid #e0e0e0;
         }
 
+        /* Home page styles */
         .intro-section {
-            text-align: center;
+            background: #fff;
+            margin: 30px 0;
             padding: 50px 40px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
         }
 
         .intro-section h1 {
@@ -98,6 +122,13 @@
         }
 
         /* About Section */
+        .about-section {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+        }
+
         .about-content {
             display: grid;
             grid-template-columns: 280px 1fr;
@@ -117,8 +148,7 @@
             border: 3px solid #34495e;
         }
 
-        .about-text h2,
-        .section h2 {
+        .about-text h2 {
             font-size: 32px;
             color: #2c3e50;
             margin-bottom: 25px;
@@ -126,22 +156,29 @@
             padding-bottom: 10px;
         }
 
-        .section h2 {
-            text-align: center;
-        }
-
-        .about-text p,
-        .section p {
+        .about-text p {
             font-size: 16px;
             margin-bottom: 18px;
             text-align: justify;
         }
 
-        .section p {
+        /* Skills Section */
+        .skills-section {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .skills-section h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
             text-align: center;
         }
 
-        /* Skills Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -166,10 +203,26 @@
         .skill-item p {
             font-size: 14px;
             color: #666;
-            text-align: center;
         }
 
         /* Contact Section */
+        .contact-section {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
         .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -182,7 +235,6 @@
             padding: 25px;
             border: 1px solid #dee2e6;
             border-radius: 5px;
-            text-align: center;
         }
 
         .contact-item h3 {
@@ -201,31 +253,23 @@
             text-decoration: underline;
         }
 
-        /* Footer */
-        footer {
-            background: #34495e;
-            color: #fff;
-            text-align: center;
-            padding: 25px 0;
-            margin-top: 40px;
-        }
-
-        footer p {
-            font-size: 14px;
-        }
-
-        /* Story Section */
-        .story-section {
+        /* Story Page Styles */
+        .story-page {
             display: none;
+            min-height: 100vh;
+            padding-top: 40px;
         }
 
-        .story-section.active {
+        .story-page.active {
             display: block;
         }
 
         .story-header {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
             text-align: center;
-            margin-bottom: 30px;
         }
 
         .story-header h1 {
@@ -250,6 +294,10 @@
         }
 
         .story-content {
+            background: #fff;
+            margin: 30px 0;
+            padding: 50px 40px;
+            border: 1px solid #e0e0e0;
             line-height: 1.8;
         }
 
@@ -312,6 +360,19 @@
             background: #2c3e50;
         }
 
+        /* Footer */
+        footer {
+            background: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
@@ -345,12 +406,15 @@
                 height: 200px;
             }
 
-            .section {
+            .about-section,
+            .skills-section,
+            .contact-section {
                 padding: 25px 20px;
             }
 
             .about-text h2,
-            .section h2 {
+            .skills-section h2,
+            .contact-section h2 {
                 font-size: 26px;
             }
         }
@@ -369,29 +433,50 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#home" class="logo">Ορέστης Μπράτζος</a>
+                <a href="?page=home" class="logo">Ορέστης Μπράτζος</a>
                 <nav>
                     <ul>
-                        <li><a href="#home">Αρχική</a></li>
-                        <li><a href="#about">Βιογραφικό</a></li>
-                        <li><a href="#skills">Δεξιότητες</a></li>
-                        <li><a href="#stories">Διασκευές</a></li>
-                        <li><a href="#contact">Επικοινωνία</a></li>
+                        <li><a href="?page=home">Αρχική</a></li>
+                        <li><a href="?page=about">Βιογραφικό</a></li>
+                        <li><a href="?page=skills">Δεξιότητες</a></li>
+                        <li><a href="?story=story_1">Διασκευές</a></li>
+                        <li><a href="?page=contact">Επικοινωνία</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <main>
+    <!-- Home Page -->
+    <div id="home-page" class="page">
         <div class="container">
-            <section id="home" class="section intro-section">
+            <section class="intro-section">
                 <h1>Ορέστης Μπράτζος</h1>
                 <p>Καλώς ήρθατε στην προσωπική μου ιστοσελίδα. Εδώ θα βρείτε πληροφορίες για το έργο μου, τα ενδιαφέροντά μου και τον τρόπο επικοινωνίας μαζί μου.</p>
-                <a href="#about" class="classic-button">Διαβάστε περισσότερα</a>
+                <a href="?page=about" class="classic-button">Διαβάστε περισσότερα</a>
             </section>
 
-            <section id="about" class="section">
+            <section class="skills-section">
+                <h2>Λογοτεχνικές Διασκευές</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Το κυνήγι στο διαδίκτυο</h3>
+                        <p>Μια σύγχρονη ιστορία κυβερνοασφάλειας και εταιρικής διαφθοράς που εξελίσσεται στον ψηφιακό κόσμο.</p>
+                        <a href="?story=story_1" class="classic-button" style="margin-top: 15px; display: inline-block;">Διαβάστε την ιστορία</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Βιογραφικό</h1>
+            </div>
+            
+            <section class="about-section">
                 <div class="about-content">
                     <div class="profile-image">
                         <img src="OBratzos_2025.webp" alt="Ορέστης Μπράτζος" class="profile-img">
@@ -405,8 +490,17 @@
                     </div>
                 </div>
             </section>
+        </div>
+    </div>
 
-            <section id="skills" class="section">
+    <!-- Skills Page -->
+    <div id="skills-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Δεξιότητες</h1>
+            </div>
+            
+            <section class="skills-section">
                 <h2>Τομείς Ενδιαφέροντος</h2>
                 <div class="skills-grid">
                     <div class="skill-item">
@@ -427,19 +521,17 @@
                     </div>
                 </div>
             </section>
+        </div>
+    </div>
 
-            <section id="stories" class="section">
-                <h2>Λογοτεχνικές Διασκευές</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <h3>Το κυνήγι στο διαδίκτυο</h3>
-                        <p>Μια σύγχρονη ιστορία κυβερνοασφάλειας και εταιρικής διαφθοράς που εξελίσσεται στον ψηφιακό κόσμο.</p>
-                        <a href="#story1" class="classic-button" style="margin-top: 15px; display: inline-block;">Διαβάστε την ιστορία</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact" class="section">
+    <!-- Contact Page -->
+    <div id="contact-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Επικοινωνία</h1>
+            </div>
+            
+            <section class="contact-section">
                 <h2>Στοιχεία Επικοινωνίας</h2>
                 <p>Για οποιαδήποτε ερώτηση ή συνεργασία, μη διστάσετε να επικοινωνήσετε μαζί μου.</p>
                 <div class="contact-info">
@@ -457,81 +549,83 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Story Section -->
-            <section id="story1" class="section story-section">
-                <a href="#stories" class="back-to-home">← Επιστροφή στις Διασκευές</a>
-                
-                <div class="story-header">
-                    <h1>Το κυνήγι στο διαδίκτυο</h1>
-                    <div class="subtitle">Διασκευή από τον Ορέστη Μπράτζο</div>
-                    <div class="story-meta">
-                        Δημοσιεύτηκε: Ιανουάριος 2025 | Κατηγορία: Σύγχρονη Πεζογραφία
-                    </div>
-                </div>
-
-                <div class="story-content">
-                    <p>Ο Αλέξανδρος κάθισε μπροστά στην οθόνη του υπολογιστή, τα δάχτυλά του να κινούνται γρήγορα πάνω στο πληκτρολόγιο. Η φωτεινότητα της οθόνης φώτιζε το σκοτεινό δωμάτιό του, ενώ έξω η νύχτα είχε απλωθεί πάνω στην πόλη.</p>
-
-                    <p>Εδώ και μήνες ακολουθούσε τα ίχνη ενός μυστηριώδους χρήστη που υπέγραφε ως "Φάντασμα_007". Κάθε φορά που πίστευε ότι πλησίαζε στην αλήθεια, το ίχνος εξαφανιζόταν σαν καπνός.</p>
-
-                    <h2>Το πρώτο στοιχείο</h2>
-
-                    <p>Όλα ξεκίνησαν από ένα απλό email που έλαβε στη δουλειά του. Ως ειδικός στην κυβερνοασφάλεια, ο Αλέξανδρος συνήθιζε να λαμβάνει παράξενα μηνύματα, αλλά αυτό ήταν διαφορετικό.</p>
-
-                    <div class="dialogue">
-                        "Αν θέλεις να μάθεις την αλήθεια για την εταιρεία σου, ακολούθησε τα ίχνη. Το πρώτο στοιχείο κρύβεται στον κώδικα της ιστοσελίδας. - Φάντασμα_007"
-                    </div>
-
-                    <p>Αρχικά νόμιζε ότι ήταν απλώς ένα ακόμα spam, αλλά κάτι στον τόνο του μηνύματος τον έκανε να το πάρει στα σοβαρά. Άνοιξε τον κώδικα της εταιρικής ιστοσελίδας και άρχισε να ψάχνει.</p>
-
-                    <div class="scene-break">* * *</div>
-
-                    <h2>Η αναζήτηση βαθαίνει</h2>
-
-                    <p>Μετά από ώρες αναζήτησης, βρήκε ένα κρυφό σχόλιο στον HTML κώδικα: "Η αλήθεια κρύβεται στα logs του server 192.168.1.100". Το IP αυτό ανήκε σε έναν παλιό server της εταιρείας που θεωρούνταν εκτός λειτουργίας.</p>
-
-                    <p>Ο Αλέξανδρος συνδέθηκε στον server με τα διαπιστευτήριά του. Αυτό που βρήκε εκεί τον άφησε άναυδο. Αρχεία που έδειχναν παράνομες συναλλαγές, κρυφές συμφωνίες, και ονόματα υψηλόβαθμων στελεχών που ήταν εμπλεκόμενα σε σκάνδαλα.</p>
-
-                    <h2>Η συνάντηση</h2>
-
-                    <p>Μια νέα ειδοποίηση εμφανίστηκε στην οθόνη του:</p>
-
-                    <div class="dialogue">
-                        "Συγχαρητήρια. Βρήκες το πρώτο κομμάτι του παζλ. Αν θέλεις να μάθεις περισσότερα, συναντήσου μαζί μου αύριο στο καφέ 'Διάδραση' στις 18:00. Θα με αναγνωρίσεις από το κόκκινο καπέλο. - Φάντασμα_007"
-                    </div>
-
-                    <p>Ο Αλέξανδρος κοίταξε το ρολόι του. Ήταν ήδη 3 το πρωί. Έκλεισε τον υπολογιστή και προσπάθησε να κοιμηθεί, αλλά ο ύπνος δεν ερχόταν. Οι σκέψεις του γύριζαν γύρω από αυτό που είχε ανακαλύψει.</p>
-
-                    <div class="scene-break">* * *</div>
-
-                    <h2>Η αποκάλυψη</h2>
-
-                    <p>Την επόμενη μέρα, στις 18:00 ακριβώς, ο Αλέξανδρος μπήκε στο καφέ. Κοίταξε γύρω του και είδε μια γυναίκα στα τριάντα της με κόκκινο καπέλο να του κάνει νόημα να πάει κοντά της.</p>
-
-                    <div class="dialogue">
-                        "Είμαι η Μαρία", είπε χαμηλόφωνα. "Εργάζομαι στο τμήμα λογιστηρίου της εταιρείας εδώ και πέντε χρόνια. Αυτό που είδες χθες είναι μόνο η κορυφή του παγόβουνου."
-                    </div>
-
-                    <p>Η Μαρία εξήγησε πώς είχε ανακαλύψει το σκάνδαλο και πώς προσπαθούσε εδώ και μήνες να βρει κάποιον που θα μπορούσε να τη βοηθήσει να φέρει την αλήθεια στο φως.</p>
-
-                    <p>"Δεν μπορούσα να το κάνω μόνη μου", συνέχισε. "Χρειαζόμουν κάποιον με τις τεχνικές σου γνώσεις για να συλλέξουμε αποδείξεις που δεν θα μπορούσαν να αμφισβητηθούν."</p>
-
-                    <h2>Το τέλος του κυνηγιού</h2>
-
-                    <p>Μαζί, ο Αλέξανδρος και η Μαρία συνέλεξαν όλες τις αποδείξεις που χρειάζονταν. Το κυνήγι στο διαδίκτυο είχε οδηγήσει σε μια αληθινή συνεργασία και στην αποκάλυψη της αλήθειας.</p>
-
-                    <p>Όταν τα στοιχεία παραδόθηκαν στις αρχές, η εταιρεία έκλεισε και οι υπεύθυνοι τιμωρήθηκαν. Ο Αλέξανδρος και η Μαρία είχαν καταφέρει αυτό που φαινόταν αδύνατο: να φέρουν τη δικαιοσύνη μέσω της τεχνολογίας.</p>
-
-                    <div class="scene-break">* * *</div>
-
-                    <p><em>Το κυνήγι στο διαδίκτυο είχε τελειώσει, αλλά η ιστορία τους μόλις είχε αρχίσει.</em></p>
-                </div>
-                
-                <a href="#stories" class="back-to-home">← Επιστροφή στις Διασκευές</a>
-            </section>
         </div>
-    </main>
+    </div>
+
+    <!-- Story Page -->
+    <div id="story-page" class="story-page">
+        <div class="container">
+            <a href="?page=home" class="back-to-home">← Επιστροφή στην Αρχική</a>
+            
+            <div class="story-header">
+                <h1>Το κυνήγι στο διαδίκτυο</h1>
+                <div class="subtitle">Διασκευή από τον Ορέστη Μπράτζο</div>
+                <div class="story-meta">
+                    Δημοσιεύτηκε: Ιανουάριος 2025 | Κατηγορία: Σύγχρονη Πεζογραφία
+                </div>
+            </div>
+
+            <div class="story-content">
+                <p>Ο Αλέξανδρος κάθισε μπροστά στην οθόνη του υπολογιστή, τα δάχτυλά του να κινούνται γρήγορα πάνω στο πληκτρολόγιο. Η φωτεινότητα της οθόνης φώτιζε το σκοτεινό δωμάτιό του, ενώ έξω η νύχτα είχε απλωθεί πάνω στην πόλη.</p>
+
+                <p>Εδώ και μήνες ακολουθούσε τα ίχνη ενός μυστηριώδους χρήστη που υπέγραφε ως "Φάντασμα_007". Κάθε φορά που πίστευε ότι πλησίαζε στην αλήθεια, το ίχνος εξαφανιζόταν σαν καπνός.</p>
+
+                <h2>Το πρώτο στοιχείο</h2>
+
+                <p>Όλα ξεκίνησαν από ένα απλό email που έλαβε στη δουλειά του. Ως ειδικός στην κυβερνοασφάλεια, ο Αλέξανδρος συνήθιζε να λαμβάνει παράξενα μηνύματα, αλλά αυτό ήταν διαφορετικό.</p>
+
+                <div class="dialogue">
+                    "Αν θέλεις να μάθεις την αλήθεια για την εταιρεία σου, ακολούθησε τα ίχνη. Το πρώτο στοιχείο κρύβεται στον κώδικα της ιστοσελίδας. - Φάντασμα_007"
+                </div>
+
+                <p>Αρχικά νόμιζε ότι ήταν απλώς ένα ακόμα spam, αλλά κάτι στον τόνο του μηνύματος τον έκανε να το πάρει στα σοβαρά. Άνοιξε τον κώδικα της εταιρικής ιστοσελίδας και άρχισε να ψάχνει.</p>
+
+                <div class="scene-break">* * *</div>
+
+                <h2>Η αναζήτηση βαθαίνει</h2>
+
+                <p>Μετά από ώρες αναζήτησης, βρήκε ένα κρυφό σχόλιο στον HTML κώδικα: "Η αλήθεια κρύβεται στα logs του server 192.168.1.100". Το IP αυτό ανήκε σε έναν παλιό server της εταιρείας που θεωρούνταν εκτός λειτουργίας.</p>
+
+                <p>Ο Αλέξανδρος συνδέθηκε στον server με τα διαπιστευτήριά του. Αυτό που βρήκε εκεί τον άφησε άναυδο. Αρχεία που έδειχναν παράνομες συναλλαγές, κρυφές συμφωνίες, και ονόματα υψηλόβαθμων στελεχών που ήταν εμπλεκόμενα σε σκάνδαλα.</p>
+
+                <h2>Η συνάντηση</h2>
+
+                <p>Μια νέα ειδοποίηση εμφανίστηκε στην οθόνη του:</p>
+
+                <div class="dialogue">
+                    "Συγχαρητήρια. Βρήκες το πρώτο κομμάτι του παζλ. Αν θέλεις να μάθεις περισσότερα, συναντήσου μαζί μου αύριο στο καφέ 'Διάδραση' στις 18:00. Θα με αναγνωρίσεις από το κόκκινο καπέλο. - Φάντασμα_007"
+                </div>
+
+                <p>Ο Αλέξανδρος κοίταξε το ρολόι του. Ήταν ήδη 3 το πρωί. Έκλεισε τον υπολογιστή και προσπάθησε να κοιμηθεί, αλλά ο ύπνος δεν ερχόταν. Οι σκέψεις του γύριζαν γύρω από αυτό που είχε ανακαλύψει.</p>
+
+                <div class="scene-break">* * *</div>
+
+                <h2>Η αποκάλυψη</h2>
+
+                <p>Την επόμενη μέρα, στις 18:00 ακριβώς, ο Αλέξανδρος μπήκε στο καφέ. Κοίταξε γύρω του και είδε μια γυναίκα στα τριάντα της με κόκκινο καπέλο να του κάνει νόημα να πάει κοντά της.</p>
+
+                <div class="dialogue">
+                    "Είμαι η Μαρία", είπε χαμηλόφωνα. "Εργάζομαι στο τμήμα λογιστηρίου της εταιρείας εδώ και πέντε χρόνια. Αυτό που είδες χθες είναι μόνο η κορυφή του παγόβουνου."
+                </div>
+
+                <p>Η Μαρία εξήγησε πώς είχε ανακαλύψει το σκάνδαλο και πώς προσπαθούσε εδώ και μήνες να βρει κάποιον που θα μπορούσε να τη βοηθήσει να φέρει την αλήθεια στο φως.</p>
+
+                <p>"Δεν μπορούσα να το κάνω μόνη μου", συνέχισε. "Χρειαζόμουν κάποιον με τις τεχνικές σου γνώσεις για να συλλέξουμε αποδείξεις που δεν θα μπορούσαν να αμφισβητηθούν."</p>
+
+                <h2>Το τέλος του κυνηγιού</h2>
+
+                <p>Μαζί, ο Αλέξανδρος και η Μαρία συνέλεξαν όλες τις αποδείξεις που χρειάζονταν. Το κυνήγι στο διαδίκτυο είχε οδηγήσει σε μια αληθινή συνεργασία και στην αποκάλυψη της αλήθειας.</p>
+
+                <p>Όταν τα στοιχεία παραδόθηκαν στις αρχές, η εταιρεία έκλεισε και οι υπεύθυνοι τιμωρήθηκαν. Ο Αλέξανδρος και η Μαρία είχαν καταφέρει αυτό που φαινόταν αδύνατο: να φέρουν τη δικαιοσύνη μέσω της τεχνολογίας.</p>
+
+                <div class="scene-break">* * *</div>
+
+                <p><em>Το κυνήγι στο διαδίκτυο είχε τελειώσει, αλλά η ιστορία τους μόλις είχε αρχίσει.</em></p>
+            </div>
+            
+            <a href="?page=home" class="back-to-home">← Επιστροφή στην Αρχική</a>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -540,25 +634,74 @@
     </footer>
 
     <script>
-        // Simple smooth scrolling - that's it!
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Show story section if clicking story link
-                    if (this.getAttribute('href') === '#story1') {
-                        document.getElementById('story1').classList.add('active');
-                    } else {
-                        document.getElementById('story1').classList.remove('active');
-                    }
-                }
+        // Simple page system with URL parameters - back to basics
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
             });
+            document.getElementById('story-page').classList.remove('active');
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+        }
+
+        function showStoryPage() {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show story page
+            document.getElementById('story-page').classList.add('active');
+        }
+
+        // Check URL parameters and show appropriate page
+        function checkURL() {
+            const params = new URLSearchParams(window.location.search);
+            const page = params.get('page');
+            const story = params.get('story');
+            
+            if (story === 'story_1') {
+                showStoryPage();
+            } else if (page) {
+                showPage(page);
+            } else {
+                showPage('home'); // Default to home page
+            }
+        }
+
+        // Handle clicks on page links
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href^="?page="]');
+            if (link) {
+                e.preventDefault();
+                const pageId = link.getAttribute('href').split('=')[1];
+                showPage(pageId);
+                history.pushState({}, '', link.getAttribute('href'));
+            }
         });
+
+        // Handle clicks on story links
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href="?story=story_1"]');
+            if (link) {
+                e.preventDefault();
+                showStoryPage();
+                history.pushState({}, '', '?story=story_1');
+            }
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function() {
+            checkURL();
+        });
+
+        // Initialize page based on URL when page loads
+        checkURL();
     </script>
 </body>
 </html>
