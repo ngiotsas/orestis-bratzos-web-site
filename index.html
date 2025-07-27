@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ορέστης Μπράτζος</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f6f0;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            border-bottom: 3px solid #34495e;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #34495e;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #34495e;
+            text-decoration: none;
+            font-weight: 400;
+            padding: 8px 16px;
+            border-radius: 3px;
+            transition: background-color 0.2s ease;
+        }
+
+        nav a:hover {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .intro-section {
+            background: #fff;
+            margin: 30px 0;
+            padding: 50px 40px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .intro-section h1 {
+            font-size: 42px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* About Section */
+        .about-section {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .profile-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid #34495e;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .skills-section h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 25px 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .skill-item h3 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+
+        .skill-item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+
+        .contact-item h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: #34495e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .intro-section {
+                padding: 30px 20px;
+            }
+
+            .intro-section h1 {
+                font-size: 32px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .about-section,
+            .skills-section,
+            .contact-section {
+                padding: 25px 20px;
+            }
+
+            .about-text h2,
+            .skills-section h2,
+            .contact-section h2 {
+                font-size: 26px;
+            }
+        }
+
+        /* Simple, classic interactions */
+        .skill-item:hover {
+            background: #e9ecef;
+        }
+
+        .contact-item:hover {
+            background: #e9ecef;
+        }
+
+        /* Page system styles */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .page-header {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .page-content {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Story Page Styles */
+        .story-page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        .story-page.active {
+            display: block;
+        }
+
+        .story-header {
+            background: #fff;
+            margin: 30px 0;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .story-header h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .story-header .subtitle {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .story-meta {
+            font-size: 14px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .story-content {
+            background: #fff;
+            margin: 30px 0;
+            padding: 50px 40px;
+            border: 1px solid #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .story-content h2 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 30px 0 20px 0;
+            border-left: 4px solid #34495e;
+            padding-left: 15px;
+        }
+
+        .story-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .story-content .dialogue {
+            font-style: italic;
+            padding-left: 20px;
+            border-left: 2px solid #bdc3c7;
+            margin: 20px 0;
+        }
+
+        .story-content .scene-break {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 24px;
+            color: #bdc3c7;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #34495e;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+
+        .back-to-home:hover {
+            background: #2c3e50;
+        }
+
+        /* Classic button styling */
+        .classic-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #34495e;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        .classic-button:hover {
+            background: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">Ορέστης Μπράτζος</a>
+                <nav>
+                    <ul>
+                        <li><a href="?page=home">Αρχική</a></li>
+                        <li><a href="?page=about">Βιογραφικό</a></li>
+                        <li><a href="?page=skills">Δεξιότητες</a></li>
+                        <li><a href="?story=story_1">Διασκευές</a></li>
+                        <li><a href="?page=contact">Επικοινωνία</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="home" class="intro-section">
+                <h1>Ορέστης Μπράτζος</h1>
+                <p>Καλώς ήρθατε στην προσωπική μου ιστοσελίδα. Εδώ θα βρείτε πληροφορίες για το έργο μου, τα ενδιαφέροντά μου και τον τρόπο επικοινωνίας μαζί μου.</p>
+                <a href="#about" class="classic-button">Διαβάστε περισσότερα</a>
+            </section>
+
+            <section id="about" class="about-section">
+                <div class="about-content">
+                    <div class="profile-image">
+                        <img src="OBratzos_2025.webp" alt="Ορέστης Μπράτζος" class="profile-img">
+                    </div>
+                    <div class="about-text">
+                        <h2>Σχετικά με εμένα</h2>
+                        <p>Είμαι ο Ορέστης Μπράτζος και χαίρομαι που επισκέπτεστε την προσωπική μου ιστοσελίδα.</p>
+                        <p>Με εμπειρία σε διάφορους τομείς και αγάπη για τη γνώση, επιδιώκω να συνεισφέρω θετικά στην κοινότητα και να δημιουργώ αξιόλογες συνεργασίες.</p>
+                        <p>Πιστεύω στη σημασία της ποιότητας, της αξιοπιστίας και της συνεχούς βελτίωσης. Το έργο μου αντικατοπτρίζει αυτές τις αξίες και στοχεύει στην επίτευξη εξαιρετικών αποτελεσμάτων.</p>
+                        <p>Είμαι πάντα ανοιχτός σε νέες προκλήσεις και ευκαιρίες για μάθηση και ανάπτυξη.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="skills-section">
+                <h2>Τομείς Ενδιαφέροντος</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Επικοινωνία</h3>
+                        <p>Ανάπτυξη αποτελεσματικής επικοινωνίας και δημιουργία ουσιαστικών διαλόγων.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Ανάλυση</h3>
+                        <p>Κριτική σκέψη και μεθοδική προσέγγιση για την επίλυση προβλημάτων.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Οργάνωση</h3>
+                        <p>Σχεδιασμός και υλοποίηση έργων με προσοχή στη λεπτομέρεια.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Συνεργασία</h3>
+                        <p>Εργασία σε ομάδα και δημιουργία θετικού εργασιακού περιβάλλοντος.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stories" class="skills-section">
+                <h2>Λογοτεχνικές Διασκευές</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3>Το κυνήγι στο διαδίκτυο</h3>
+                        <p>Μια σύγχρονη ιστορία κυβερνοασφάλειας και εταιρικής διαφθοράς που εξελίσσεται στον ψηφιακό κόσμο.</p>
+                        <a href="?story=story_1" class="classic-button" style="margin-top: 15px; display: inline-block;">Διαβάστε την ιστορία</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="contact-section">
+                <h2>Στοιχεία Επικοινωνίας</h2>
+                <p>Για οποιαδήποτε ερώτηση ή συνεργασία, μη διστάσετε να επικοινωνήσετε μαζί μου.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Ηλεκτρονικό Ταχυδρομείο</h3>
+                        <a href="mailto:orestis.bratzos@example.com">orestis.bratzos@example.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Τηλέφωνο</h3>
+                        <a href="tel:+302101234567">+30 210 123 4567</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Επαγγελματικό Δίκτυο</h3>
+                        <a href="#">LinkedIn Προφίλ</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Story Page -->
+    <div id="story-page" class="story-page">
+        <div class="container">
+            <a href="/?page=home" onclick="showPage('home')" class="back-to-home">← Επιστροφή στην Αρχική</a>
+            
+            <div class="story-header">
+                <h1>Το κυνήγι στο διαδίκτυο</h1>
+                <div class="subtitle">Διασκευή από τον Ορέστη Μπράτζο</div>
+                <div class="story-meta">
+                    Δημοσιεύτηκε: Ιανουάριος 2025 | Κατηγορία: Σύγχρονη Πεζογραφία
+                </div>
+            </div>
+
+            <div class="story-content">
+                <p>Ο Αλέξανδρος κάθισε μπροστά στην οθόνη του υπολογιστή, τα δάχτυλά του να κινούνται γρήγορα πάνω στο πληκτρολόγιο. Η φωτεινότητα της οθόνης φώτιζε το σκοτεινό δωμάτιό του, ενώ έξω η νύχτα είχε απλωθεί πάνω στην πόλη.</p>
+
+                <p>Εδώ και μήνες ακολουθούσε τα ίχνη ενός μυστηριώδους χρήστη που υπέγραφε ως "Φάντασμα_007". Κάθε φορά που πίστευε ότι πλησίαζε στην αλήθεια, το ίχνος εξαφανιζόταν σαν καπνός.</p>
+
+                <h2>Το πρώτο στοιχείο</h2>
+
+                <p>Όλα ξεκίνησαν από ένα απλό email που έλαβε στη δουλειά του. Ως ειδικός στην κυβερνοασφάλεια, ο Αλέξανδρος συνήθιζε να λαμβάνει παράξενα μηνύματα, αλλά αυτό ήταν διαφορετικό.</p>
+
+                <div class="dialogue">
+                    "Αν θέλεις να μάθεις την αλήθεια για την εταιρεία σου, ακολούθησε τα ίχνη. Το πρώτο στοιχείο κρύβεται στον κώδικα της ιστοσελίδας. - Φάντασμα_007"
+                </div>
+
+                <p>Αρχικά νόμιζε ότι ήταν απλώς ένα ακόμα spam, αλλά κάτι στον τόνο του μηνύματος τον έκανε να το πάρει στα σοβαρά. Άνοιξε τον κώδικα της εταιρικής ιστοσελίδας και άρχισε να ψάχνει.</p>
+
+                <div class="scene-break">* * *</div>
+
+                <h2>Η αναζήτηση βαθαίνει</h2>
+
+                <p>Μετά από ώρες αναζήτησης, βρήκε ένα κρυφό σχόλιο στον HTML κώδικα: "Η αλήθεια κρύβεται στα logs του server 192.168.1.100". Το IP αυτό ανήκε σε έναν παλιό server της εταιρείας που θεωρούνταν εκτός λειτουργίας.</p>
+
+                <p>Ο Αλέξανδρος συνδέθηκε στον server με τα διαπιστευτήριά του. Αυτό που βρήκε εκεί τον άφησε άναυδο. Αρχεία που έδειχναν παράνομες συναλλαγές, κρυφές συμφωνίες, και ονόματα υψηλόβαθμων στελεχών που ήταν εμπλεκόμενα σε σκάνδαλα.</p>
+
+                <h2>Η συνάντηση</h2>
+
+                <p>Μια νέα ειδοποίηση εμφανίστηκε στην οθόνη του:</p>
+
+                <div class="dialogue">
+                    "Συγχαρητήρια. Βρήκες το πρώτο κομμάτι του παζλ. Αν θέλεις να μάθεις περισσότερα, συναντήσου μαζί μου αύριο στο καφέ 'Διάδραση' στις 18:00. Θα με αναγνωρίσεις από το κόκκινο καπέλο. - Φάντασμα_007"
+                </div>
+
+                <p>Ο Αλέξανδρος κοίταξε το ρολόι του. Ήταν ήδη 3 το πρωί. Έκλεισε τον υπολογιστή και προσπάθησε να κοιμηθεί, αλλά ο ύπνος δεν ερχόταν. Οι σκέψεις του γύριζαν γύρω από αυτό που είχε ανακαλύψει.</p>
+
+                <div class="scene-break">* * *</div>
+
+                <h2>Η αποκάλυψη</h2>
+
+                <p>Την επόμενη μέρα, στις 18:00 ακριβώς, ο Αλέξανδρος μπήκε στο καφέ. Κοίταξε γύρω του και είδε μια γυναίκα στα τριάντα της με κόκκινο καπέλο να του κάνει νόημα να πάει κοντά της.</p>
+
+                <div class="dialogue">
+                    "Είμαι η Μαρία", είπε χαμηλόφωνα. "Εργάζομαι στο τμήμα λογιστηρίου της εταιρείας εδώ και πέντε χρόνια. Αυτό που είδες χθες είναι μόνο η κορυφή του παγόβουνου."
+                </div>
+
+                <p>Η Μαρία εξήγησε πώς είχε ανακαλύψει το σκάνδαλο και πώς προσπαθούσε εδώ και μήνες να βρει κάποιον που θα μπορούσε να τη βοηθήσει να φέρει την αλήθεια στο φως.</p>
+
+                <p>"Δεν μπορούσα να το κάνω μόνη μου", συνέχισε. "Χρειαζόμουν κάποιον με τις τεχνικές σου γνώσεις για να συλλέξουμε αποδείξεις που δεν θα μπορούσαν να αμφισβητηθούν."</p>
+
+                <h2>Το τέλος του κυνηγιού</h2>
+
+                <p>Μαζί, ο Αλέξανδρος και η Μαρία συνέλεξαν όλες τις αποδείξεις που χρειάζονταν. Το κυνήγι στο διαδίκτυο είχε οδηγήσει σε μια αληθινή συνεργασία και στην αποκάλυψη της αλήθειας.</p>
+
+                <p>Όταν τα στοιχεία παραδόθηκαν στις αρχές, η εταιρεία έκλεισε και οι υπεύθυνοι τιμωρήθηκαν. Ο Αλέξανδρος και η Μαρία είχαν καταφέρει αυτό που φαινόταν αδύνατο: να φέρουν τη δικαιοσύνη μέσω της τεχνολογίας.</p>
+
+                <div class="scene-break">* * *</div>
+
+                <p><em>Το κυνήγι στο διαδίκτυο είχε τελειώσει, αλλά η ιστορία τους μόλις είχε αρχίσει.</em></p>
+            </div>
+            
+            <a href="/?page=home" onclick="showPage('home')" class="back-to-home">← Επιστροφή στην Αρχική</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ορέστης Μπράτζος. Όλα τα δικαιώματα διατηρούνται.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Check URL parameters and show appropriate page
+        function checkURL() {
+            const params = new URLSearchParams(window.location.search);
+            const story = params.get('story');
+            const page = params.get('page');
+            
+            if (story === 'story_1') {
+                showStoryPage();
+            } else if (page) {
+                showPageFromURL(page);
+            } else {
+                showHomePage();
+            }
+        }
+
+        function showStoryPage() {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('story-page').classList.add('active');
+            // Update URL without page reload
+            const newUrl = window.location.origin + window.location.pathname + '?story=story_1';
+            history.pushState({}, '', newUrl);
+        }
+
+        function showPageFromURL(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('story-page').classList.remove('active');
+            document.getElementById(pageId + '-page').classList.add('active');
+            // Update URL without page reload
+            const newUrl = window.location.origin + window.location.pathname + '?page=' + pageId;
+            history.pushState({}, '', newUrl);
+        }
+
+        function showHomePage() {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('story-page').classList.remove('active');
+            document.getElementById('home-page').classList.add('active');
+            // Update URL without page reload
+            const newUrl = window.location.origin + window.location.pathname;
+            history.pushState({}, '', newUrl);
+        }
+
+        // Handle navigation clicks - EXACT same pattern as the working story link
+        document.querySelector('a[href="/?story=story_1"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            showStoryPage();
+        });
+
+        document.querySelector('a[href="/?page=home"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPageFromURL('home');
+        });
+
+        document.querySelector('a[href="/?page=about"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPageFromURL('about');
+        });
+
+        document.querySelector('a[href="/?page=skills"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPageFromURL('skills');
+        });
+
+        document.querySelector('a[href="/?page=contact"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPageFromURL('contact');
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function() {
+            checkURL();
+        });
+
+        // Initialize page based on URL
+        checkURL();
+    </script>
+</body>
+</html>
